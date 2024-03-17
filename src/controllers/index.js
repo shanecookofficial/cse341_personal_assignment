@@ -3,7 +3,7 @@ const home = (req, res, next) => {
 };
 
 const josie = (req, res, next) => {
-    res.json('Josie');
+    res.json('Josie Cook');
 };
 
 module.exports = {home, josie};
