@@ -1,0 +1,23 @@
+{
+    "contact": {
+      "firstName": "Kourtney",
+      "lastName": "Cook",
+      "email": "kourtney.cook@test.com",
+      "favoriteColor": "Blue",
+      "birthday": "06/16/19"
+    },
+    "contact2": {
+      "firstName": "Aston",
+      "lastName": "Cook",
+      "email": "aston.cook@test.com",
+      "favoriteColor": "Red",
+      "birthday": "10/28/01"
+    },
+    "contact3": {
+      "firstName": "Ken",
+      "lastName": "Cook",
+      "email": "ken.cook@test.com",
+      "favoriteColor": "Green",
+      "birthday": "06/15/1973"
+    }
+  }
