@@ -23,4 +23,67 @@ const getSingle = async (req, res, next) => {
   });
 };
 
+<<<<<<< Updated upstream
 module.exports = { getAll, getSingle };
+=======
+const createContact = async (req, res) => {
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mongodb.getDb().db('CSE341').collection('contacts').insertOne(contact);
+  if (response.acknowledged) {
+    res.status(201).json(response);
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+  }
+};
+
+const updateContact = async (req, res) => {
+  const userId = new ObjectId(req.params.id);
+  // be aware of updateOne if you only want to update specific fields
+  const contact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
+  const response = await mongodb
+    .getDb()
+    .db('CSE341')
+    .collection('contacts')
+    .replaceOne({ _id: userId }, contact);
+  console.log(response);
+  if (response.modifiedCount > 0) {
+    res.status(204).send();
+  } else {
+    res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+  }
+};
+
+const deleteContact = async (req, res) => {
+  try {
+    const userId = new ObjectId(req.params.id);
+    const response = await mongodb.getDb().db('CSE341').collection('contacts').deleteOne({ _id: userId });
+    if (response.deletedCount > 0) {
+      res.status(204).send();
+    } else {
+      res.status(404).json({ message: 'Contact not found.' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = {
+  getAll,
+  getSingle,
+  createContact,
+  updateContact,
+  deleteContact
+};
+>>>>>>> Stashed changes

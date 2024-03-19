@@ -9,6 +9,7 @@ GET http://localhost:3000/contacts/65f8f4aab17926596eac9dd5
 GET http://localhost:3000/contacts/65f8f4b3b17926596eacb805
 
 // PRODUCTION Deploy
+<<<<<<< Updated upstream
 ###
 GET https://cse341-personal-assignment-lciu.onrender.com/contacts
 ###
@@ -17,3 +18,51 @@ GET https://cse341-personal-assignment-lciu.onrender.com/contacts/65f8f4a0b17926
 GET https://cse341-personal-assignment-lciu.onrender.com/contacts/65f8f4aab17926596eac9dd5
 ###
 GET https://cse341-personal-assignment-lciu.onrender.com/contacts/65f8f4b3b17926596eacb805
+=======
+### Get all contacts
+https://cse341-personal-assignment-lciu.onrender.com/contacts
+
+### Get contact by id
+https://cse341-personal-assignment-lciu.onrender.com/contacts/65f8f4a0b17926596eac8145
+
+### Create contact
+POST https://cse341-personal-assignment-lciu.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Shealyn",
+    "lastName":"Cook",
+    "email":"shealyn.cook@test.com",
+    "favoriteColor":"Yellow",
+    "birthday":"11/21/1999"
+}
+
+
+
+### PUT contact
+PUT https://cse341-personal-assignment-lciu.onrender.com/contacts/65f8f4aab17926596eac9dd5 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Juniper",
+    "lastName":"Cook",
+    "email":"juniper.cook@gmail.com",
+    "favoriteColor":"Purple",
+    "birthday":"01/17/2023"
+}
+
+### Create contact
+POST https://cse341-personal-assignment-lciu.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Aston",
+    "lastName":"Cook",
+    "email":"aston.cook@test.com",
+    "favoriteColor":"Red",
+    "birthday":"10/28/2001"
+}
+
+### DELETE contact
+DELETE https://cse341-personal-assignment-lciu.onrender.com/contacts/65f901d0afa93d6219629bf6 HTTP/1.1
+>>>>>>> Stashed changes
